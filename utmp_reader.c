@@ -6,18 +6,12 @@ void print_entry (int num, struct utmp *up) {
     printf("%d\t", num);
     if (up->ut_type)
        printf("%d\t", up->ut_type);
-    else
-       printf("nil\t");
     if (up->ut_pid)
        printf("%d\t", up->ut_pid);
     if (up->ut_user && up->ut_user != "")
        printf("%s\t", up->ut_user);
-    else
-       printf("system\t");
     if (up->ut_host)
        printf("%s\t", up->ut_host);
-    else
-       printf("localhost\t");
     if (up->ut_time)
        printf("%ld\n", up->ut_time);
 }
